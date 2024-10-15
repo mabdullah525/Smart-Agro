@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <!-- CDN LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Smart Agro</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: var(--swiper-pagination-bullet-opacity, 1);
+            background: #F7C35F !important;
+        }
+
+        .swiper-pagination {
+            position: static !important;
+            text-align: center;
+            transition: .3s opacity;
+            transform: translate3d(0, 0, 0);
+            z-index: 10;
+            margin-top: 25px;
+        }
+
+        .swiper-pagination-bullet {
+            background: #CCCCCC;
+        }
+
+        /* TESTIMONIALS */
+        .testimonial .image img {
+            width: 350px !important;
+            /* height: 350px; */
+
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-body ">
+
+    <nav class="bg-nav w-full h-20 flex items-center">
+        <div class="container xs:px-4  flex items-center justify-between mx-auto">
+            <div class="font-text text-2xl text-text font-bold">Smart Agro.</div>
+
+            <!-- Hamburger Icon (Mobile) -->
+            <div class="lg:hidden flex items-center">
+                <button id="nav-toggle" class="text-text focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+
+            <!-- Navigation Menu -->
+            <ul class="lg:flex hidden flex-col lg:flex-row items-center font-heading text-text">
+                <li class="mx-[15px] cursor-pointer font-[700] relative group">Home
+                    <div
+                        class="absolute w-full h-[2px] bg-yellow scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300">
+                    </div>
+                </li>
+                <li class="mx-[15px] cursor-pointer relative group"><a href="#about us">About Us</a>
+                    <div
+                        class="absolute w-full h-[2px] bg-yellow scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300">
+                    </div>
+                </li>
+                <li class="mx-[15px] cursor-pointer relative group"><a href="#product">Our Products</a>
+                    <div
+                        class="absolute w-full h-[2px] bg-yellow scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300">
+                    </div>
+                </li>
+                <li class="mx-[15px] cursor-pointer relative group"><a href="#project">Project</a>
+                    <div
+                        class="absolute w-full h-[2px] bg-yellow scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300">
+                    </div>
+                </li>
+                <li class="mx-[15px] cursor-pointer relative group"><a href="#services">Services</a>
+                    <div
+                        class="absolute w-full h-[2px] bg-yellow scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300">
+                    </div>
+                </li>
+                <li class="mx-[15px] cursor-pointer relative group"><a href="#news">News</a>
+                    <div
+                        class="absolute w-full h-[2px] bg-yellow scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300">
+                    </div>
+                </li>
+                <li class="mx-[15px] cursor-pointer relative group"><a href="#contact">Contact Us</a>
+                    <div
+                        class="absolute w-full h-[2px] bg-yellow scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Mobile Full-Screen Navigation Menu -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-nav bg-opacity-100 text-text  hidden z-50  flex-col items-center justify-start pt-28">
+            <ul class="flex flex-col items-center space-y-8 text-2xl font-heading">
+                <li><a href="#home" class="hover:text-yellow">Home</a></li>
+                <li><a href="#aboutus" class="hover:text-yellow">About Us</a></li>
+                <li><a href="#product" class="hover:text-yellow" >Our Products</a></li>
+                <li><a href="#project" class="hover:text-yellow">Project</a></li>
+                <li><a href="#services" class="hover:text-yellow">Services</a></li>
+                <li><a href="#news" class="hover:text-yellow">News</a></li>
+                <li><a href="#contact" class="hover:text-yellow">Contact Us</a></li>
+            </ul>
+            <button id="menu-close" class="absolute top-5 right-5 text-text focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+    </nav>
+
+    <script>
+        // JavaScript for toggling the mobile menu
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuClose = document.getElementById('menu-close');
+
+        navToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+
+    <!-- HERO SECTION -->
+    <section class="relative w-full xs:h-[490px] lg:h-screen md:h-[590px]">
+        <div
+            class="before:content[''] before:bg-[url('assets/image.png')] before:absolute before:w-full before:h-full before:top-0 before:bg-cover bg-center">
+            <div class="relative container xs:px-4  xs:py-0 top-[165px] xs:top-[112px]">
+
+                <p
+                    class="xs:text-[18px] text-text text-[25px] font-[600] font-heading before:content[''] xs:before:w-[10rem] xs:before:h-[13px] before:absolute before:top-[21px] before:bg-[url('assets/Underline_01.png')] before:bg-cover before:bg-center before:w-[14rem] before:h-[2rem] before:z-0">
+                    Original & Natural</p>
+
+                <h1 class="text-[60px] font-[700] text-yellow leading-[4rem] font-text xs:text-3xl">Agriculture
+                    Matter <img src="assets/head-flower.png"
+                        class="absolute left-[558px] bottom-[286px] xs:top-[8px] xs:w-[45px] xs:left-[253px] "></h1>
+                <p class="xs:text-[31px] text-[60px] font-[700] text-text">Good production</p>
+                <p class="xs:text-[12px] font-heading max-w-[36rem] text-text pt-6">Dissuade ecstatic and properly saw
+                    entirely sir why
+                    laughter endeavor. In on my jointure horrible margaret suitable he speedily.</p>
+                <button
+                    class="xs:py-[12px] xs:px-[17px] w-[185px] bg-yellow text-hero-btn px-[30px] py-[15px] mt-10 uppercase rounded-[20px] text-[13px] font-[600] font-text hover:bg-nav hover:text-text ease-out duration-300">discover
+                    more</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR INTRODUCTION SECTION -->
+    <section class="lg:h-screen xs:h-[1065px] md:h-[1100px]" id="about us">
+        <!-- green border -->
+        <div class="w-[400px] h-[350px] bg-primary xs:w-[160px] xs:h-[200px] xs:hidden "></div>
+        <div
+            class="container   flex flex-col lg:gap-0 lg:flex-row mx-auto py-16 absolute top-[700px] left-0 right-0 xs:px-4 xs:mx-1 xs:py-0 xs:gap-8 md:gap-[45px]">
+
+            <div class="basis-[40%] relative">
+                <img src="assets/introduction-img.png" class="w-[400px] h-[470px] xs:w-full xs:h-full">
+                <div class="absolute rounded-l bottom-[20px] left-[-12px] w-3 h-[190px] bg-yellow xs:hidden"></div>
+
+                <div
+                    class="flex gap-[35px] lg:w-[69%] p-4 m-auto rounded-[10px] absolute bottom-[-3rem] left-[2.9rem] bg-green xs:w-64 xs:left-4">
+                    <img src="assets/icon.png" class="w-[60px]">
+                    <div>
+                        <p class="text-text text-[25px] italic font-text xs:text-xl">86,700</p>
+                        <p class="text-text font-text font-[500] text-[13px] xs:text-xs">Successfully Project Completed
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box">
+
+            </div>
+            <!-- Right side text -->
+            <div class="basis-[60%] py-5">
+                <div>
+                    <h1 class="font-heading text-text text-[20px] xs:text-lg">our introduction</h1>
+                    <h1 class="font-text text-text text-[40px] font-[700] w-[524px] xs:text-3xl xs:w-[290px]">Pure
+                        Agriculture and Organic Form
+                    </h1>
+                </div>
+
+                <p class="mt-[25px] font-text text-yellow text-[25px] font-[500]">We’re Leader in Agriculture Market</p>
+                <p class="font-heading text-text mt-3">There are many variations of passages of available but the
+                    majority
+                    have suffered alteration in
+                    some form, by injected humou or randomised words even slightly believable.</p>
+                <ul class="font-text text-text font-[500] mt-8">
+                    <li class="my-2 text-[18px] flex items-center gap-[12px]"><img src="assets/Check.png">Organic food
+                        contains more vitamins</li>
+                    <li class="my-2 text-[18px] flex items-center gap-[12px]"><img src="assets/Check.png">Eat organic
+                        because supply meets demand</li>
+                    <li class="my-2 text-[18px] flex items-center gap-[12px]"><img src="assets/Check.png">Organic food
+                        is never irradiated</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRUITS AND VEGITABLES -->
+    <section id="product">
+        <div class="container mx-auto py-16 text-center xs:mt-14 xs:px-4 xs:mx-1">
+            <!-- headings -->
+            <p class="text-[18px] text-text font-heading xs:text-lg">Popular Foods And Vegetables</p>
+            <h1 class="text-[45px] text-text font-[700] font-text xs:text-3xl">Quality Fruits & Vegetables</h1>
+            <div
+                class="flex flex-wrap lg:gap-0 lg:justify-between items-center pt-[45px] xs:justify-center xs:gap-5 md:justify-center md:gap-5">
+                <div
+                    class="box w-[145px] h-[140px] xs:w-[125px] xs:h-[130px] bg-blur flex justify-center items-center flex-col gap-[10px] rounded-[15px] cursor-pointer hover:bg-yellow drop-shadow-[50%] ease-out duration-300">
+                    <img src="assets/Icon_Apple.png" alt="">
+                    <h1 class="text-[18px] font-[600] text-text font-text">Apple</h1>
+                </div>
+                <div
+                    class="box w-[145px] h-[140px] xs:w-[125px] xs:h-[130px] bg-blur flex justify-center items-center flex-col gap-[10px] rounded-[15px] cursor-pointer hover:bg-yellow drop-shadow-[50%] ease-out duration-300">
+                    <img src="assets/24-blueberry.png" alt="">
+                    <h1 class="text-[18px] font-[600] text-text font-text">Apple</h1>
+                </div>
+                <div
+                    class="box w-[145px] h-[140px] xs:w-[125px] xs:h-[130px] bg-blur flex justify-center items-center flex-col gap-[10px] rounded-[15px] cursor-pointer hover:bg-yellow drop-shadow-[50%] ease-out duration-300">
+                    <img src="assets/icon-Strawberry.png" alt="">
+                    <h1 class="text-[18px] font-[600] text-text font-text">Apple</h1>
+                </div>
+                <div
+                    class="box w-[145px] h-[140px] xs:w-[125px] xs:h-[130px] bg-blur flex justify-center items-center flex-col gap-[10px] rounded-[15px] cursor-pointer hover:bg-yellow drop-shadow-[50%] ease-out duration-300">
+                    <img src="assets/eggplant.png" alt="">
+                    <h1 class="text-[18px] font-[600] text-text font-text">Apple</h1>
+                </div>
+                <div
+                    class="box w-[145px] h-[140px] xs:w-[125px] xs:h-[130px] bg-blur flex justify-center items-center flex-col gap-[10px] rounded-[15px] cursor-pointer hover:bg-yellow drop-shadow-[50%] ease-out duration-300">
+                    <img src="assets/cabbage.png" alt="">
+                    <h1 class="text-[18px] font-[600] text-text font-text">Apple</h1>
+                </div>
+                <div
+                    class="box w-[145px] h-[140px] xs:w-[125px] xs:h-[130px] bg-blur flex justify-center items-center flex-col gap-[10px] rounded-[15px]  cursor-pointer hover:bg-yellow drop-shadow-[50%] ease-out duration-300">
+                    <img src="assets/carrot.png" alt="">
+                    <h1 class="text-[18px] font-[600] text-text font-text">Apple</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="relative w-full xs:h-[500px] lg:h-screen md:h-[500px] mt-[50px]">
+        <div
+            class="before:content[''] before:bg-[url('assets/video.png')] before:absolute before:w-full before:h-[76%] before:top-0 before:bg-cover before:bg-center">
+
+            <div
+                class="relative container flex-wrap flex text-center lg:gap-[270px] items-center lg:top-[195px] xs:px-4 xs:mx-1 xs:gap-20 xs:top-[60px] md:top-[70px] md:gap-[35px]">
+                <div>
+                    <h1
+                        class="font-text text-[40px] max-w-[490px] text-text font-[700] text-left xs:text-3xl xs:w-[300px]">
+                        Agriculture Matters
+                        to the Future of Bangladesh</h1>
+                </div>
+                <div class="circle w-[200px]">
+                    <div class="flex justify-center items-center text-play w-[80px] h-[80px] border rounded-full">
+                        <div
+                            class="flex justify-center items-center text-center w-[50px] h-[50px] bg-text rounded-[50%]">
+                            <img src="assets/play btn.png" alt="">
+                        </div>
+                    </div>
+                    <h1 class="italic font-text text-yellow">Watch the video</h1>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SWIPER SECTION -->
+    <section class="relative w-full lg:h-screen xs:px-2" id="project">
+        <div
+            class="before:content[''] before:bg-[url('assets/style.png')] before:absolute before:w-full lg:before:h-[85%] md:before:h-[87%] before:top-0 before:bg-contain before:bg-no-repeat before:bg-bottom ">
+
+
+            <div class="container text-center xs:px-4 xs:mx-1">
+                <p class="text-[18px] text-text font-heading xs:text-lg">RECENTLY COMPLETED WORK</p>
+                <h1 class="text-[45px] text-text font-[700] font-text xs:text-3xl">Explore Our Projects</h1>
+                <!-- Swiper -->
+                <div class="swiper mySwiper mt-9">
+                    <div class="swiper-wrapper py-5">
+                        <div
+                            class="swiper-slide group-hover ease-out duration-300  hover:border-2 hover:border-yellow  transform hover:!translate-y-[-20px] transition group relative hover:opacity-75">
+                            <img src="assets/image 18.png">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 11.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 12.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 13.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 18.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 11.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-opacity-75">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 12.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 13.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide ease-out duration-300  hover:border-2 hover:border-yellow transform hover:!translate-y-[-20px] group relative">
+                            <img src="assets/image 18.png" alt="">
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                            </div>
+                            <!-- text-image -->
+                            <div
+                                class="flex w-[89%] justify-between items-center text-start absolute top-[200px] left-[1rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div>
+                                    <h1 class="text-yellow font-heading font-[700] text-[12px] uppercase">Agriculture
+                                    </h1>
+                                    <p class="text-text font-[600] font-text w-[135px]">Natural way of
+                                        agriculture</p>
+                                </div>
+
+                                <i class="fa-solid fa-arrow-right-long text-yellow cursor-pointer"></i>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="xs:mt-10 md:mt-12">
+        <div class="container  text-center mx-auto xs:px-4 xs:mx-1">
+            <p class="text-[18px] text-text font-heading uppercase xs:text-lg">Our Testimonials</p>
+            <h1 class="text-[45px] text-text font-[700] font-text xs:text-3xl">WHAT THEY’RE TAKING ABOUT</h1>
+            <!-- Swiper -->
+            <div class="">
+                <div class="swiper mytesti">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide testimonial">
+                            <div
+                                class="box-main bg-body flex flex-col md:flex-col lg:flex-row justify-center w-full items-center pt-14">
+                                <!-- image div -->
+                                <div class="image w-full md:w-[40%]  md:mb-0 relative"><i
+                                        class="fa-solid fa-quote-left text-yellow text-6xl absolute lg:top-[-5px] lg:right-[160px] xs:right-[26px] md:right-[16px]"></i><img
+                                        src="assets/Ellipse 13.png" class="xs:h-[280px]"></div>
+                                <!-- text-right -->
+                                <div class="xs:mt-7 text-left w-full lg:w-1/2 md:w-full ">
+                                    <p class="text-[16px] text-text font-heading">“Lorem ipsum dolor sit amet
+                                        consectetur.
+                                        Tortor tempus cursus leo dictumst elementum. Sagittis elit turpis dignissim
+                                        turpis
+                                        tristique venenatis. Tempor id commodo odio nunc id volutpat libero. Ut
+                                        hendrerit
+                                        malesuada netus sapien dictum sapien nibh. Cras laoreet risus mus mi commodo
+                                        volutpat quis neque. Scelerisque at in in id donec ornare velit. Posuere amet
+                                        lobortis volutpat purus mauris. Tortor magna non turpis ultricies iaculis
+                                        rhoncus.
+                                        Volutpat lectus proin pellentesque platea.”</p>
+                                    <h1 class="mt-3 text-text font-text font-[500]">Tyrese Gibson</h1>
+                                    <p class="text-text font-heading opacity-20 text-[14px]">Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide testimonial">
+                            <div
+                                class="box-main bg-body flex flex-col md:flex-col lg:flex-row justify-center w-full items-center pt-14">
+                                <!-- image div -->
+                                <div class="image w-full md:w-[40%] relative"><i
+                                        class="fa-solid fa-quote-left text-yellow text-6xl absolute lg:top-[-5px] lg:right-[160px] xs:right-[26px] md:right-[16px]"></i><img
+                                        src="assets/Ellipse 13.png"></div>
+                                <!-- text-right -->
+                                <div class="xs:mt-7 text-left w-full lg:w-1/2 md:w-full ">
+                                    <p class="text-[16px] text-text font-heading">“Lorem ipsum dolor sit amet
+                                        consectetur.
+                                        Tortor tempus cursus leo dictumst elementum. Sagittis elit turpis dignissim
+                                        turpis
+                                        tristique venenatis. Tempor id commodo odio nunc id volutpat libero. Ut
+                                        hendrerit
+                                        malesuada netus sapien dictum sapien nibh. Cras laoreet risus mus mi commodo
+                                        volutpat quis neque. Scelerisque at in in id donec ornare velit. Posuere amet
+                                        lobortis volutpat purus mauris. Tortor magna non turpis ultricies iaculis
+                                        rhoncus.
+                                        Volutpat lectus proin pellentesque platea.”</p>
+                                    <h1 class="mt-3 text-text font-text font-[500]">Tyrese Gibson</h1>
+                                    <p class="text-text font-heading opacity-20 text-[14px]">Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide testimonial">
+                            <div
+                                class="box-main bg-body flex flex-col  md:flex-col lg:flex-row justify-center w-full items-center pt-14">
+                                <!-- image div -->
+                                <div class="image w-full md:w-[40%] relative"><i
+                                        class="fa-solid fa-quote-left text-yellow text-6xl absolute lg:top-[-5px] lg:right-[160px] xs:right-[26px] md:right-[16px]"></i><img
+                                        src="assets/Ellipse 13.png"></div>
+                                <!-- text-right -->
+                                <div class="xs:mt-7 text-left w-full lg:w-1/2 md:w-full ">
+                                    <p class="text-[16px] text-text font-heading">“Lorem ipsum dolor sit amet
+                                        consectetur.
+                                        Tortor tempus cursus leo dictumst elementum. Sagittis elit turpis dignissim
+                                        turpis
+                                        tristique venenatis. Tempor id commodo odio nunc id volutpat libero. Ut
+                                        hendrerit
+                                        malesuada netus sapien dictum sapien nibh. Cras laoreet risus mus mi commodo
+                                        volutpat quis neque. Scelerisque at in in id donec ornare velit. Posuere amet
+                                        lobortis volutpat purus mauris. Tortor magna non turpis ultricies iaculis
+                                        rhoncus.
+                                        Volutpat lectus proin pellentesque platea.”</p>
+                                    <h1 class="mt-3 text-text font-text font-[500]">Tyrese Gibson</h1>
+                                    <p class="text-text font-heading opacity-20 text-[14px]">Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT QUALITY SECTION -->
+    <section class="mt-8 flex flex-col lg:flex-row relative w-full" id="services">
+        <div class="absolute top-[13px] right-[708px] xs:top-4 xs:right-[310px]"><img src="assets/image 21.png"
+                class="w-[70px] xs:w-14"></div>
+        <div class="basis-[45%]">
+            <img src="assets/image 20.png" class="w-full h-full object-cover">
+        </div>
+        <!-- Text Content Section -->
+        <!-- right side shadow box -->
+        <div class="w-[110px] h-[110px] bg-box absolute top-0 right-0 hidden"></div>
+        <!-- right side shadow box -->
+        <div
+            class="xs:px-6 basis-[55%] p-8 px-16 bg-green-600 text-text !bg-lightgreen before:content[''] before:bg-[url('assets/style-2.png')] before:absolute md:before:w-[90%] lg:before:w-[50%] before:h-[100%] before:top-0 before:bg-contain before:bg-no-repeat before:bg-bottom xs:before:w-[80%]">
+            <p class="text-text font-heading text-[17px] xs-text-lg">MODERN AGRICULTURE</p>
+            <h2 class="text-[45px] font-[700] font-text mb-4 mt-4 xs:text-3xl">Providing High Quality Products</h2>
+
+            <div
+                class="mt-4 xs:mt-11 xs:pb-9 flex xs:gap-[12px] xs:flex-col lg:justify-between md:gap-10 border-b-[1px] border-border pb-[3.25rem]">
+                <div
+                    class="flex shrink-0 justify-center items-center w-[80px] h-[80px] bg-logobg rounded-full xs:w-16 xs:h-16">
+                    <img src="assets/Group.png" class="xs:w-8">
+                </div>
+
+                <!-- text -->
+                <div class="lg:w-[500px]">
+                    <h3 class="text-[22px] font-text font-[600] mb-2">Our Agriculture Growth</h3>
+                    <p class="font-heading text-[14px]">Lorem ipsum dolor sit amet consectetur. Cursus purus at tempus
+                        arcu.
+                        Metus
+                        elit
+                        auctor.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 relative xs:flex-col flex xs:gap-[12px] lg:justify-between md:gap-10">
+                <div
+                    class="flex shrink-0 justify-center items-center w-[80px] h-[80px] bg-logobg rounded-full xs:w-16 xs:h-16">
+                    <img src="assets/Layer 34.png" class="xs:w-8">
+                </div>
+                <!-- text -->
+                <div class="lg:w-[500px]">
+                    <h3 class="text-[22px] font-text font-[600] mb-2">Making Healthy Foods</h3>
+                    <p class="font-heading text-[14px]">Lorem ipsum dolor sit amet consectetur. Cursus purus at tempus
+                        arcu. Metus
+                        elit
+                        auctor interdum scelerisque.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDS SECTION -->
+    <section class=" relative w-full h-full py-16 " id="news">
+        <div class="absolute top-0 left-0 w-full lg:h-[60%] md:h-[36%] bg-primary xs:hidden"></div>
+        <div
+            class=" before:content[''] before:bg-[url('assets/cards-bg.png')] before:absolute before:w-full before:h-[68%] before:top-0 before:bg-contain before:bg-no-repeat">
+            <div class="relative px-5 mx-auto text-center">
+                <!-- heading -->
+                <p class="text-[18px] text-text font-heading uppercase xs:text-lg">FROM THE BLOG</p>
+                <h1 class="text-[45px] text-text font-[700] font-text xs:text-3xl">News & Articles</h1>
+                <div class="flex container xs:p-0 md:px-1 lg:px-20 justify-between xs:justify-center flex-wrap">
+                    <div class="mt-20 max-w-[22rem] rounded-[10px] overflow-hidden shadow-lg bg-card">
+                        <div class="relative">
+                            <div
+                                class="flex justify-center items-center absolute right-0 bottom-0 w-[120px] h-[30px] bg-yellow text-[15px] font-text font-[500] rounded-tl-lg">
+                                3 Sep, 2023</div>
+                            <img class="w-full object-cover" src="assets/image 26.png" alt="Harvesting">
+                        </div>
+                        <div class="p-4 text-text">
+                            <div class="flex items-center justify-start gap-7">
+                                <div class="flex items-center space-x-2">
+                                    <span>
+                                        <i class="fa-regular fa-user text-yellow"></i>
+                                    </span>
+
+                                    <span class="font-heading text-[14px] xs:text-[13px]">by Kevin Martin</span>
+                                </div>
+                                <div>
+                                    <span><i class="fa-regular fa-comment text-yellow"></i></span>
+                                    <span class="font-heading text-[14px] xs:text-[13px]">2 Comments</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-left text-[19px] font-text font-[700]">
+                                Taking seamless key indicators offline to
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-20 max-w-[22rem] rounded-[10px] overflow-hidden shadow-lg bg-card">
+                        <div class="relative">
+                            <div
+                                class="flex justify-center items-center absolute right-0 bottom-0 w-[120px] h-[30px] bg-yellow text-[15px] font-text font-[500] rounded-tl-lg">
+                                3 Sep, 2023</div>
+                            <img class="w-full object-cover" src="assets/image 26 (1).png" alt="Harvesting">
+                        </div>
+                        <div class="p-4 text-text">
+                            <div class="flex items-center justify-start gap-7">
+                                <div class="flex items-center space-x-2">
+                                    <span>
+                                        <i class="fa-regular fa-user text-yellow"></i>
+                                    </span>
+
+                                    <span class="font-heading text-[14px] xs:text-[13px]">by Kevin Martin</span>
+                                </div>
+                                <div>
+                                    <span><i class="fa-regular fa-comment text-yellow"></i></span>
+                                    <span class="font-heading text-[14px] xs:text-[13px]">5 Comments</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-left text-[19px] font-text font-[700]">
+                                Override the digital divide with additional
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-20 max-w-[22rem] rounded-[10px] overflow-hidden shadow-lg bg-card">
+                        <div class="relative">
+                            <div
+                                class="flex justify-center items-center absolute right-0 bottom-0 w-[120px] h-[30px] bg-yellow text-[15px] font-text font-[500] rounded-tl-lg">
+                                3 Sep, 2023</div>
+                            <img class="w-full object-cover" src="assets/image 26 (2).png" alt="Harvesting">
+                        </div>
+                        <div class="p-4 text-text">
+                            <div class="flex items-center justify-start gap-7">
+                                <div class="flex items-center space-x-2">
+                                    <span>
+                                        <i class="fa-regular fa-user text-yellow"></i>
+                                    </span>
+
+                                    <span class="font-heading text-[14px] xs:text-[13px]">by Kevin Martin</span>
+                                </div>
+                                <div>
+                                    <span><i class="fa-regular fa-comment text-yellow"></i></span>
+                                    <span class="font-heading text-[14px] xs:text-[13px]">1 Comments</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-left text-[19px] font-text font-[700]">
+                                Agriculture Matters to the Future of next
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+
+    <section class="mt-16" id="contact">
+        <div class="container xs:px-4 xs:mx-1">
+            <div class="contact-box grid lg:grid-cols-2 xs:grid-cols-1 items-start gap-16 mx-auto">
+                <!-- left side -->
+                <div class="material">
+                    <p class="text-text font-heading text-[18px xs:text-lg ">Contact Now</p>
+                    <h1 class="text-text font-text font-[700] text-[45px] xs:text-3xl">GET IN TOUCH NOW</h1>
+                    <p class="text-text font-heading text-[15px] mt-6">Dissuade ecstatic and properly saw entirely sir
+                        why laughter endeavor. In on my jointure horrible margaret suitable he speedily.</p>
+                    <!-- phone -->
+                    <div class="mt-7">
+                        <h1 class="text-text font-heading text-[13px] uppercase leading-[2]">Phone</h1>
+                        <p class="text-text font-text font-[500] text-[15px]">+880123456789</p>
+                        <p class="text-text font-text font-[500] text-[15px]">+880987654321</p>
+
+                    </div>
+                    <!-- email -->
+                    <div class="mt-7">
+                        <h1 class="text-text font-heading text-[13px] uppercase leading-[2]">Email</h1>
+                        <p class="text-text font-text font-[500] text-[15px]">needhelp@company.com</p>
+                    </div>
+                    <!-- address -->
+                    <div class="mt-7">
+                        <h1 class="text-text font-heading text-[13px] uppercase leading-[2]">Address</h1>
+                        <p class="text-text font-text font-[500] text-[15px]">Road No. 8, Niketan, Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+
+                <!-- FORM -->
+                <div>
+                    <form class="space-y-6">
+                        <input type='text' placeholder='Your Name'
+                            class="w-full rounded-[10px] py-4 px-4 bg-primary placeholder:text-text text-text text-sm outline-none focus:outline-yellow outline-1" />
+                        <input type='text' placeholder='Phone Number'
+                            class="w-full rounded-[10px] py-4 px-4 bg-primary placeholder:text-text text-text text-sm outline-none focus:outline-yellow outline-1" />
+                        <input type='email' placeholder='Your Email'
+                            class="w-full rounded-[10px] py-4 px-4 bg-primary placeholder:text-text text-text text-sm outline-none focus:outline-yellow outline-1" />
+                        <textarea placeholder='Your Message' rows="6"
+                            class="w-full rounded-[10px] px-4 bg-primary placeholder:text-text text-text text-sm pt-3 outline-none focus:outline-yellow outline-1"></textarea>
+                        <button type="button"
+                            class="mt-12 flex items-center justify-center text-sm rounded-lg px-[40px] py-[15px] bg-yellow hover:bg-primary hover:text-text ease-out duration-300 ">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- logo section -->
+    <section class="py-12 border-t-[1px] mt-20 border-t-border">
+        <div class="container mx-auto xs:px-4 xs:mx-1">
+            <div class="logo-box flex justify-between flex-wrap gap-4 gap-6sm: md:gap-8 lg:gap-10">
+                <img src="assets/figma-vector-logo 1.png" class="xs:w-32">
+                <img src="assets/figma-vector-logo 1.png" class="xs:w-32">
+                <img src="assets/figma-vector-logo 1.png" class="xs:w-32">
+                <img src="assets/figma-vector-logo 1.png" class="xs:w-32">
+                <img src="assets/figma-vector-logo 1.png" class="xs:w-32">
+                <img src="assets/figma-vector-logo 1.png" class="xs:w-32">
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCOVER ME SECTION -->
+    <section class="relative w-full lg:h-[63vh] md:h-[400px] xs:h-[320px] mt-12">
+        <div class="absolute top-0 w-full h-[60%] bg-gradient-to-r from-bga via-bga to-bgb xs:h-[80%]"></div>
+        <div
+            class="before:content[''] before:bg-[url('assets/grass.png')] before:absolute before:w-full before:h-[59%] before:top-0 before:bg-cover before:bg-center ">
+        </div>
+        <div
+            class="container flex lg:justify-between md:justify-center xs:gap-12  items-center xs:flex-col md:flex-col lg:flex-row h-[60%] xs:px-4 xs:mx-1 xs:h-[80%] xs:py-9">
+            <!-- logo -->
+            <div class="flex items-center gap-6 relative">
+
+                <div class="w-[80px] h-[80px] rounded-full flex justify-center items-center bg-logobg flex-shrink-0">
+                    <img src="assets/Group.png" alt="">
+                </div>
+                <h1 class="text-[45px] text-primary font-[700] font-flower xs:text-3xl">We are Leader in Agriculture
+                    Market</h1>
+            </div>
+
+            <div>
+                <button type="button"
+                    class="relative flex items-center justify-center text-sm rounded-lg px-[40px] py-[15px] bg-yellow hover:bg-primary hover:text-text ease-out duration-300 uppercase">
+                    Discover Me
+                </button>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="container xs:px-4 xs:mx-1">
+        <footer class="py-10">
+            <div class="container mx-auto px-1 flex flex-col lg:flex-row justify-between space-y-10 lg:space-y-0">
+
+                <!-- About Section -->
+                <div class="lg:w-1/3">
+                    <h2 class="text-[30px] font-text font-[600] text-text mb-4">Smart Agro.</h2>
+                    <p class="mb-6 text-text font-heading text-[15px] lg:w-[100%]">Lorem ipsum dolor sit
+                        amet, adipiscing
+                        elit. In hac habitasse platea dictumst. Duis
+                        porta, quam ut finibus ultrices.</p>
+                    <hr class="mb-4 border-t-border">
+                    <div class="flex space-x-4 text-yellow">
+                        <a href="#" class="text-yellow hover:text-text"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-yellow hover:text-text"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-yellow hover:text-text"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-yellow hover:text-text"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="main flex lg:gap-10 xs:flex-col md:gap-40">
+                    <!-- Useful Links Section -->
+                    <div>
+                        <h2 class="text-[20px] font-[600] font-text text-text mb-4">Useful Links</h2>
+                        <ul class="space-y-2 text-text font-heading text-[15px]">
+                            <li><a href="#" class="hover:text-yellow ease-out duration-300">New Projects</a></li>
+                            <li><a href="#" class="hover:text-yellow ease-out duration-300">Our Services</a></li>
+                            <li><a href="#" class="hover:text-yellow ease-out duration-300">Testimonials</a></li>
+                            <li><a href="#" class="hover:text-yellow ease-out duration-300">About Us</a></li>
+                            <li><a href="#" class="hover:text-yellow ease-out duration-300">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- Newsletter Section -->
+                    <div>
+                        <h2 class="text-[20px] font-[600] font-text text-text mb-4">Newsletter</h2>
+                        <p class="mb-4 w-[300px] text-text font-heading text-[15px]">Subscribe to our weekly Newsletter
+                            and receive updates via email.</p>
+                        <form class="flex relative">
+                            <input type="email" placeholder="Enter your mail here..."
+                                class="w-full px-4 py-3 rounded-full bg-primary text-text placeholder-inputname focus:outline-yellow outline-1 outline-none">
+                            <button type="submit"
+                                class="absolute right-[4px] top-[3px] w-[40px] h-[40px] p-2 bg-yellow font-bold rounded-full">GO</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-border mt-8 pt-6 flex justify-between items-baseline flex-wrap">
+                <p class="text-text font-heading text-[15px] xs:text-[14px]">Copyright © Smart Agro, All Rights
+                    Reserved.</p>
+                <div class="flex items-center space-x-4 text-[15px] mt-4 ">
+                    <a href="#"
+                        class="hover:text-yellow ease-out duration-300 text-text font-heading text-[15px]xs:text-[14px]">Terms
+                        & Conditions</a>
+                    <a href="#"
+                        class="hover:text-yellow ease-out duration-300 text-text font-heading text-[15px]">Privacy
+                        Policy</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SWIPER .JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".mytesti", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>
